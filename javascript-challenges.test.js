@@ -85,32 +85,53 @@ describe("fullerHouse", () => {
 
 
 
+// const fullerHouse = () => {
+//     const min = 2
+//     const max = 7
+//     const random = []
+    
+//     for(let i = 0; i < 5; i++) {
+//     const randomnums = Math.floor(Math.random()* (max - min + 1) + min)
+//     random.push(randomnums)
+//     }
+//     const counter = {}
+
+//     for (const num of random) {
+//         if (counter[num]) {
+//             counter[num]
+//         }
+//         if (counter[num] >=3){
+//             return true
+//         }
+//         else {
+//             counter[num] = 1
+//         }
+//         }
+//       }
+//     return false
+
 const fullerHouse = () => {
-    const min = 2
-    const max = 7
-    const random = []
+  const random = []
+for (const number of hand) {
+  if (count[number]) {
+    count[number]++;
+  } else {
+    count[number] = 1;
+  }
+}
+
+let count1 = 0;
+let count2 = 0;
+
+for (const number in count) {
+  if (count[number] === 3) {
+    count1 = 3;
+  } else if (count[number] === 2) {
+    count2 = 2;
+  }
+}
     
-    for(let i = 0; i < 5; i++) {
-    const randomnums = Math.floor(Math.random()* (max - min + 1) + min)
-    random.push(randomnums)
-    }
-    const counter = {}
-
-    for (const num of random) {
-        if (counter[num]) {
-            counter[num]
-        }
-        if (counter[num] >=3){
-            return true
-        }
-        else {
-            counter[num] = 1
-        }
-        }
-      }
-    return false
-    
-
-
+return count1 === 3 && count2 === 2;
+}
    
     
