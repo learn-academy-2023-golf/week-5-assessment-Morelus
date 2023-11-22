@@ -23,7 +23,31 @@ const secretCodeWord3 = "Eccentric"
 
 // b) Create the function that makes the test pass.
 
+describe("changeChars", () => {
+    it("The coded message converts 'a'to '4', 'e' to '3', 'i' to '1', and 'o' to '0'", () => {
+        expect(changeChars("Lackadaisical")).toEqual("L4ck4d41s1c4l")
+        expect(changeChars("Gobbledygook")).toEqual("G0bbl3dyg00k");
+        expect(changeChars("Eccentric")).toEqual("3cc3ntr1c");
+    });
+  });
+
 // Pseudo code:
+// create a function called changeChars.
+// use .replace to replace unwanted characters.
+// Replace  "a" to 4, "e" to 3, "i" to 1, and "o" to 0.
+// Use global regular which replaces all occurances of the letter.
+// Return the string.
+
+
+  const changeChars = (string) => {
+    string = string.replace(/a|A/g , '4')
+    .replace(/e|E/g, '3')
+    .replace(/i|I/g , '1')
+    .replace(/o|O/g , '0')
+    return string
+
+  }
+
 
 // --------------------2) Create a function that takes in an array of 5 numbers and determines whether or not the array is a "full house". A full house is exactly one pair and one three of a kind.
 
@@ -39,5 +63,75 @@ const hand4 = [7, 2, 7, 2, 7]
 // Expected output: true
 
 // b) Create the function that makes the test pass.
+describe("fullerHouse", () => {
+    it("function that takes in an array of 5 numbers and determines whether or not the array is a 'full house'", () => {
+        expect(fullerHouse(hand1)).toEqual(true);
+        expect(fullerHouse(hand2)).toEqual(false);
+        expect(fullerHouse(hand4)).toEqual(true);
+        expect(fullerHouse(hand3)).toEqual(false);
+    });
+  });
+
+
+
 
 // Pseudo code:
+
+
+// Create a function called fullerHouse.
+// Use math.random to give numbers between 2-7.
+// Create a for loop to determine if 3 of the numbers are the same and return true it is and false if its not. 
+
+
+
+
+// const fullerHouse = () => {
+//     const min = 2
+//     const max = 7
+//     const random = []
+    
+//     for(let i = 0; i < 5; i++) {
+//     const randomnums = Math.floor(Math.random()* (max - min + 1) + min)
+//     random.push(randomnums)
+//     }
+//     const counter = {}
+
+//     for (const num of random) {
+//         if (counter[num]) {
+//             counter[num]
+//         }
+//         if (counter[num] >=3){
+//             return true
+//         }
+//         else {
+//             counter[num] = 1
+//         }
+//         }
+//       }
+//     return false
+
+const fullerHouse = () => {
+  const random = []
+for (const number of hand) {
+  if (count[number]) {
+    count[number]++;
+  } else {
+    count[number] = 1;
+  }
+}
+
+let count1 = 0;
+let count2 = 0;
+
+for (const number in count) {
+  if (count[number] === 3) {
+    count1 = 3;
+  } else if (count[number] === 2) {
+    count2 = 2;
+  }
+}
+    
+return count1 === 3 && count2 === 2;
+}
+   
+    
